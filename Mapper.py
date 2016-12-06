@@ -1,9 +1,12 @@
 import gmaps
+gmaps.configure('AIzaSyDkKaasomnWFDxMdRHM5QAxRbxzZIkIBaw')
 
 locationList = []
 
 for line in open('locationList.txt').readlines():
     stringCoord = line.strip().split(',')
-    locationList.append([stringCoord[0], stringCoord[1]])
+    locationList.append([float(stringCoord[0]), float(stringCoord[1])])
 
-gmaps.heatmap(locationList)
+m = gmaps.Map()
+layer = gmaps.Heatmap(data=locationList)
+m.add_layer(layer)
