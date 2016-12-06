@@ -1,6 +1,9 @@
-import json
+import gmaps
 
-mapsJson = json.load(open('LocationHistory.json'))
+locationList = []
 
-for value in mapsJson:
-    print(value)
+for line in open('locationList.txt').readlines():
+    stringCoord = line.strip().split(',')
+    locationList.append([stringCoord[0], stringCoord[1]])
+
+gmaps.heatmap(locationList)
