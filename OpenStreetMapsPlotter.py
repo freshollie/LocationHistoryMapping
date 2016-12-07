@@ -45,7 +45,7 @@ def generatePointsMap(n, e, s, w, imageScale, name, every = 1):
 
     m.drawmapboundary(fill_color='white')  # fill to edge
 
-    m.plot(x1, y1, 'o', markersize=5, markerfacecolor='black', markeredgecolor="none", alpha=0.5)
+    m.plot(x1, y1, 'o', markersize=3, markerfacecolor='black', markeredgecolor="none", alpha=0.5)
     #m.scatter(x1, y1, s=5, c='red', cmap=cm.jet, alpha=0.5)
 
     print('Finished plotting')
@@ -73,11 +73,4 @@ def generatePointsMap(n, e, s, w, imageScale, name, every = 1):
     print('Compiling images')
     Image.alpha_composite(backgroundImage, foregroundImage).save('Output/' + name + '.png')
 
-
-#generatePointsMap(*[float(input('Side Coord: ')) for i in range(4)], name=input('Name: '), every=int(input('Divide number of coords by?: ')))
-
-#generatePointsMap(56.304, 7.229, 44.277, -5.955, imageScale = 5655207, name='France', every=1)
-56.304, 2.373, 49.838  -5.955, 3000000
-generatePointsMap(56.390, 2.823, 50.723, -11.678, 2631424, name='UK', every=1)
-
-        #http://render.openstreetmap.org/cgi-bin/export?bbox=w,s,e,n&scale=10556&format=png
+generatePointsMap(55.310, 1.890, 49.951, -5.790, 3000000, name='England2', every=1)
